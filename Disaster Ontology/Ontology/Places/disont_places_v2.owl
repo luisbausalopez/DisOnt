@@ -1,0 +1,522 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.tut.fi/mat/disasterOnt/Places/"
+     xml:base="http://www.tut.fi/mat/disasterOnt/Places/"
+     xmlns:dop="http://www.tut.fi/mat/disasterOnt/Places/#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.tut.fi/mat/disasterOnt/Places/">
+        <owl:versionIRI rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/2.0"/>
+        <rdfs:comment xml:lang="en">
+			Disaster Ontology - Places.
+			
+			Contains countries, country regions and continents.
+
+			Countries belong to Country Regions. Country regions belong to continents.
+			
+		</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/subRegionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Places/subRegionOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Continent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Continent"/>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/CountryISOalpha2 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Places/CountryISOalpha2"/>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/CountryName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Places/CountryName"/>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/CountryRegion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Places/CountryRegion"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Continent -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Continent">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Places"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Country -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Country">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Places"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/subRegionOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CountryRegion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CountryISOalpha2"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CountryName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/CountryRegion -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Places/CountryRegion">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Places"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/subRegionOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Continent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Places -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Places"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Africa -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Africa">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Continent"/>
+        <rdfs:label xml:lang="en">Africa</rdfs:label>
+        <rdfs:label xml:lang="es">África</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Albania -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Albania">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/EasternEurope"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EU</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AL</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Albania</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Antartida -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Antartida">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Continent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Asia -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Asia">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Continent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Bolivia -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Bolivia">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/SouthernAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BO</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bolivia</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/CentralAmerica -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/CentralAmerica">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CountryRegion"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/NorthAmerica"/>
+        <rdfs:label xml:lang="en">Central America</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Chile -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Chile">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/SouthernAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chile</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Colombia -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Colombia">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/SouthernAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CO</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colombia</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/CostaRica -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/CostaRica">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CentralAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CR</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Costa Rica</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/EasternEurope -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/EasternEurope">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CountryRegion"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Europe"/>
+        <rdfs:label xml:lang="en">Eastern Europe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Ecuador -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Ecuador">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/SouthernAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EC</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ecuador</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/ElSalvador -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/ElSalvador">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CentralAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SV</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El Salvador</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Europe -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Europe">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Continent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Finland -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Finland">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/NorthEurope"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EU</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FI</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Guatemala -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Guatemala">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CentralAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GT</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guatemala</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Guyana -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Guyana">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/SouthernAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GY</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guyana</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Honduras -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Honduras">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CentralAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HN</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Honduras</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Jamaica -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Jamaica">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CentralAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JM</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jamaica</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Mexico -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Mexico">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CentralAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MX</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mexico</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Nicaragua -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Nicaragua">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CentralAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NI</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nicaragua</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/NorthAmerica -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/NorthAmerica">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Continent"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">North America</Continent>
+        <rdfs:label xml:lang="en">North America</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/NorthEurope -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/NorthEurope">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CountryRegion"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Europe"/>
+        <rdfs:label xml:lang="en">North Europe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/NorthernNorthAmerica -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/NorthernNorthAmerica">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CountryRegion"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/NorthAmerica"/>
+        <rdfs:label xml:lang="en">Northern America</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Oceania -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Oceania">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Continent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Panama -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Panama">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CentralAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PA</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panama</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Peru -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Peru">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/SouthernAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PE</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peru</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Serbia -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Serbia">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/EasternEurope"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EU</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RS</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Serbia</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/SouthAmerica -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/SouthAmerica">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Continent"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South America</Continent>
+        <rdfs:label xml:lang="en">South America</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/SouthEurope -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/SouthEurope">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CountryRegion"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Europe"/>
+        <rdfs:label xml:lang="en">South Europe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/SouthernAmerica -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/SouthernAmerica">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/CountryRegion"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/SouthAmerica"/>
+        <rdfs:label xml:lang="en">Southern America</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Spain -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Spain">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/SouthEurope"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EU</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ES</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spain</CountryName>
+        <rdfs:label xml:lang="es">España</rdfs:label>
+        <rdfs:label xml:lang="en">Spain</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Uruguay -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Uruguay">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/SouthernAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UY</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uruguay</CountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Places/Venezuela -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Places/Venezuela">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/Country"/>
+        <subRegionOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Places/SouthernAmerica"/>
+        <Continent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SA</Continent>
+        <CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VE</CountryISOalpha2>
+        <CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Venezuela</CountryName>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+
