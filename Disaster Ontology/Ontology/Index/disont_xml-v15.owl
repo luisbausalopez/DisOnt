@@ -1,0 +1,3061 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.tut.fi/mat/disasterOnt/#"
+     xml:base="http://www.tut.fi/mat/disasterOnt/"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:do="http://www.tut.fi/mat/disasterOnt/">
+    <owl:Ontology rdf:about="http://www.tut.fi/mat/disasterOnt/">
+        <owl:versionIRI rdf:resource="http://www.tut.fi/mat/disasterOnt/15.0"/>
+        <rdfs:comment xml:lang="en">Disaster Ontology
+
+Contains:
+ * Disaster Classification: classification of disasters. E.g. a Tornado is a disaster of class NaturalDisaster-&gt;Meteorological-&gt;Storm-&gt;ConvectiveStorm-&gt;Tornado
+
+ * Disaster Event: definition of the structure of an individual that belongs to the Disaster Event class. The ontology contains a few sample individuals of disaster event.</rdfs:comment>
+        <owl:versionInfo xml:lang="en">Disaster Ontology v.15.0 
+
+It has the following fixes since last version:
+- namespace changed to do: instead of disasterOnt:
+- label added to ontology
+- description added to ontology</owl:versionInfo>
+        <owl:priorVersion xml:lang="en">14.0</owl:priorVersion>
+        <rdfs:label xml:lang="en">Disaster Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TypeOfDisaster -->
+
+    <owl:ObjectProperty rdf:about="http://www.tut.fi/mat/disasterOnt/TypeOfDisaster">
+        <rdfs:domain rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <rdfs:range rdf:resource="http://www.tut.fi/mat/disasterOnt/Disaster"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ADL1Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ADL1Code">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/LocationInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ADL1Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ADL1Name">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/LocationInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ADL2Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ADL2Code">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/LocationInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ADL2Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ADL2Name">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/LocationInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ADL3Code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ADL3Code">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/LocationInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ADL3Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ADL3Name">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/LocationInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Affected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Affected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/HumanImpact"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Animals -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Animals">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SectorsAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/AssociatedDisasters -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/AssociatedDisasters">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/PhysicalCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Bridges -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Bridges">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InfrastructureAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/BridgesAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/BridgesAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Bridges"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/BridgesDestroyed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/BridgesDestroyed">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Bridges"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Business -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Business">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InfrastructureAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/BusinessAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/BusinessAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Business"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/BusinessDestroyed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/BusinessDestroyed">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Business"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Cause -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Cause">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Origin"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Comments -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Comments">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterInformation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Communications -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Communications">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SectorsAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Continent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Continent">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/CountryInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Costs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Costs">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/EconomicImpact"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/CountryISOalpha2 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/CountryISOalpha2">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/CountryInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/CountryInformation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/CountryInformation">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/GeographicInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/CountryName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/CountryName">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/CountryInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/CountryRegion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/CountryRegion">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/CountryInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Crops -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Crops">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InfrastructureAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/CropsAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/CropsAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Crops"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/CropsDestroyed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/CropsDestroyed">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Crops"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/CulturalInfrastructure -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/CulturalInfrastructure">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SectorsAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Date">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/TemporalInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Deaths -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Deaths">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/HumanImpact"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/DeclarationOfDisaster -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/DeclarationOfDisaster">
+        <owl:equivalentProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/InternationalAppeal"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterDeclaration"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterInformation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/DescriptionOfCause -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/DescriptionOfCause">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Origin"/>
+        <rdfs:domain rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/DisasterClassification -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/DisasterClassification">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationLevel1"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/DisasterDeclaration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/DisasterDeclaration">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterStatus"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/DisasterInformation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/DisasterInformation">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationLevel1"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/DisasterStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/DisasterStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationLevel2"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Duration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Duration">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Time"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/EconomicImpact -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/EconomicImpact">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationLevel3"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/EducationCenters -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/EducationCenters">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InfrastructureAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/EducationCentersAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/EducationCentersAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/EducationCenters"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/EducationCentersDestroyed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/EducationCentersDestroyed">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/EducationCenters"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Electricity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Electricity">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SectorsAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/EndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/EndDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/EntryCryteria -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/EntryCryteria">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationLevel1"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Forest -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Forest">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InfrastructureAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ForestAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ForestAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Forest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ForestDestroyed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ForestDestroyed">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Forest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/GLIDE -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/GLIDE">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterInformation"/>
+        <rdfs:domain rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/GeographicInformation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/GeographicInformation">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationLevel2"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Hospitals -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Hospitals">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InfrastructureAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/HospitalsAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/HospitalsAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Hospitals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/HospitalsDestroyed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/HospitalsDestroyed">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Hospitals"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Houses -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Houses">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InfrastructureAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/HousesAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/HousesAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Houses"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/HousesDestroyed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/HousesDestroyed">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Houses"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/HumanImpact -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/HumanImpact">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationLevel3"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Industry -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Industry">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SectorsAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Information -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Information"/>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/InformationLevel1 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/InformationLevel1">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Information"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/InformationLevel2 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/InformationLevel2">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Information"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/InformationLevel3 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/InformationLevel3">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Information"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/InformationSource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/InformationSource">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationLevel3"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/InfrastructureAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/InfrastructureAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/EconomicImpact"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/InsuredLosses -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/InsuredLosses">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Costs"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/InternationalAppeal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/InternationalAppeal">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterInformation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Latitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Latitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Position"/>
+        <rdfs:domain rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/LocalTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/LocalTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Time"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Location">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/LocationInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/LocationInformation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/LocationInformation">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/GeographicInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Longitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Longitude">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Position"/>
+        <rdfs:domain rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/LostCattle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/LostCattle">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SectorsAffected"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/MagnitudeScale -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/MagnitudeScale">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Scale"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/NumberOfAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/NumberOfAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Affected"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/NumberOfDeaths -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/NumberOfDeaths">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Deaths"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/NumberOfEvacuated -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/NumberOfEvacuated">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Affected"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/NumberOfHomeless -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/NumberOfHomeless">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Affected"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/NumberOfInjured -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/NumberOfInjured">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Affected"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/NumberOfMissing -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/NumberOfMissing">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Deaths"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/NumberOfRelocated -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/NumberOfRelocated">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Affected"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/OFDA -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/OFDA">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterStatus"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/OFDAResponse -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/OFDAResponse">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/OFDA"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Origin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Origin">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/PhysicalCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/PhysicalCharacteristics -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/PhysicalCharacteristics">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationLevel2"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Position -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Position">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/GeographicInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Rails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Rails">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InfrastructureAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/RailsAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/RailsAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Rails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/RailsDestroyed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/RailsDestroyed">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Rails"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ReconstructionCosts -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ReconstructionCosts">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Costs"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ReliabilityScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ReliabilityScore">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SourceReliablity"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ReportingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ReportingDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SourceDate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/RiverBasin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/RiverBasin">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/LocationInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Roads -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Roads">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InfrastructureAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/RoadsAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/RoadsAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Roads"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/RoadsDestroyed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/RoadsDestroyed">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Roads"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Sanitation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Sanitation">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SectorsAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Scale -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Scale">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/PhysicalCharacteristics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ScaleValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/ScaleValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Scale"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/SectorsAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/SectorsAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/EconomicImpact"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Source -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Source">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationSource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/SourceDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/SourceDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationSource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/SourceName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/SourceName">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Source"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/SourceReliablity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/SourceReliablity">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationSource"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/SourceType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/SourceType">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Source"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/StartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/StartDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TemporalInformation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/TemporalInformation">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InformationLevel2"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Time -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Time">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/TemporalInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TotalAffected -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/TotalAffected">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Affected"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TotalDeaths -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/TotalDeaths">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Deaths"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TotalEstimatedDamages -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/TotalEstimatedDamages">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Costs"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label>TotalEstimatedDamagesUSD</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TotalEstimatedDamagesLocal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/TotalEstimatedDamagesLocal">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Costs"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Transportation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Transportation">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SectorsAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/WaterSupply -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/WaterSupply">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SectorsAffected"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/Year">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/disasterCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/disasterCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterInformation"/>
+        <rdfs:domain rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">Disaster Code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/disasterName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/disasterName">
+        <rdfs:subPropertyOf rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterInformation"/>
+        <rdfs:domain rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#Name"/>
+        <rdfs:label xml:lang="en">Disaster Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/AccidentInTunnel -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/AccidentInTunnel">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/AccidentOnRail"/>
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/AccidentOnRoad"/>
+        <rdfs:label xml:lang="en">Accident In Tunnel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/AccidentOnAir -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/AccidentOnAir">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/TransportAccident"/>
+        <rdfs:label xml:lang="en">Accident On Air</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/AccidentOnRail -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/AccidentOnRail">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/TransportAccident"/>
+        <rdfs:label xml:lang="en">Accident On Rail</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/AccidentOnRoad -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/AccidentOnRoad">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/TransportAccident"/>
+        <rdfs:label xml:lang="en">Accident On Road</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/AccidentOnWater -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/AccidentOnWater">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/TransportAccident"/>
+        <rdfs:label xml:lang="en">Accident On Water</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Airburst -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Airburst">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Impact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Alluvion -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Alluvion">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Sedimentation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/AnimalAccident -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/AnimalAccident">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Biological"/>
+        <rdfs:label xml:lang="en">Animal Accident</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/AshFall -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/AshFall">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/VolcanicActivity"/>
+        <rdfs:label xml:lang="en">Ash Fall</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Avalanche -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Avalanche">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Landslide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/BacterialDisease -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/BacterialDisease">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Epidemic"/>
+        <rdfs:label xml:lang="en">Bacterial Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Biological -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Biological">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/NaturalDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Blizzard -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Blizzard">
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Snow_Storm"/>
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Winterstorm"/>
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/BoatCapsize -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/BoatCapsize">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/AccidentOnWater"/>
+        <rdfs:label xml:lang="en">Boat Capsize</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ChemicalSpill -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ChemicalSpill">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialAccident"/>
+        <rdfs:comment xml:lang="en">Accidental release of hazardous chemical substances ocurring during the production, transportation or handling.</rdfs:comment>
+        <rdfs:label xml:lang="en">Chemical Spill</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/CivilWar -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/CivilWar">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Conflict"/>
+        <rdfs:label xml:lang="en">Civil War</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Climatological -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Climatological">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/NaturalDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/CoastalFlood -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/CoastalFlood">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Flood"/>
+        <rdfs:label xml:lang="en">Coastal Flood</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ColdWave -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ColdWave">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ExtremeTemperatures"/>
+        <owl:disjointWith rdf:resource="http://www.tut.fi/mat/disasterOnt/HeatWave"/>
+        <rdfs:label xml:lang="en">Cold Wave</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Collapse -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Collapse">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/MiscellaneousAccident"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Collision -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Collision">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Impact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ComplexDisaster -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ComplexDisaster">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Food"/>
+        <rdfs:comment xml:lang="en">Major famine situation for which drought was not the main causal factor</rdfs:comment>
+        <rdfs:label xml:lang="en">Complex Disaster</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Conflict -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Conflict">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SocialDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Contamination -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Contamination">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialAccident"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ConvectiveStorm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Storm"/>
+        <rdfs:label xml:lang="en">Convective Storm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/DebrisAvalanche -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/DebrisAvalanche">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Avalanche"/>
+        <rdfs:label xml:lang="en">Debris Avalanche</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Deforestation -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Deforestation">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Climatological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/DepositedSedimentation -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/DepositedSedimentation">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Sedimentation"/>
+        <rdfs:label xml:lang="en">Sedimentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Derecho -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Derecho">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Disaster -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Disaster">
+        <rdfs:label xml:lang="en">Disaster Classification</rdfs:label>
+        <rdfs:label xml:lang="en">Disaster Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/DisasterEvent -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/DisasterEvent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/TypeOfDisaster"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Disaster"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/AssociatedDisasters"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/AssociatedDisasters"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/SectorsAffected"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/SourceName"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/ADL1Code"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/ADL1Name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CountryISOalpha2"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CountryName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/GLIDE"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/StartDate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/disasterCode"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/ADL2Code"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/ADL2Name"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/ADL3Code"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/ADL3Name"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Cause"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Continent"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CountryRegion"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Crops"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/DeclarationOfDisaster"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/DescriptionOfCause"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Duration"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/EducationCenters"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Hospitals"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/HousesAffected"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/HousesDestroyed"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Latitude"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Location"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Longitude"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/LostCattle"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/MagnitudeScale"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/NumberOfAffected"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/NumberOfDeaths"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/NumberOfEvacuated"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/NumberOfInjured"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/NumberOfMissing"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/NumberOfRelocated"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/RiverBasin"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Roads"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/ScaleValue"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/TotalAffected"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/TotalEstimatedDamages"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/TotalEstimatedDamagesLocal"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/disasterName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#Name"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Disaster Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Drought -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Drought">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Climatological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Duststorm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Duststorm">
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Sandstorm"/>
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+        <rdfs:label xml:lang="en">Dust Storm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/EarthContamination -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/EarthContamination">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Contamination"/>
+        <rdfs:label xml:lang="en">Earth Contamination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Earthquake -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Earthquake">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Geophysical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/EnergeticParticles -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/EnergeticParticles">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SpaceWeather"/>
+        <rdfs:label xml:lang="en">Energetic Particles</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Epidemic -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Epidemic">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Biological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Epizootic -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Epizootic">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Epidemic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Erosion -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Erosion">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Hydrological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Explosion -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Explosion">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/MiscellaneousAccident"/>
+        <rdfs:comment xml:lang="en">Explosion involving building or structures</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ExtraTropicalStorm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ExtraTropicalStorm">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Storm"/>
+        <owl:disjointWith rdf:resource="http://www.tut.fi/mat/disasterOnt/TropicalStorm"/>
+        <rdfs:label xml:lang="en">Extra-Tropical Storm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Extraterrestrial -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Extraterrestrial">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/NaturalDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ExtremeTemperatures -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ExtremeTemperatures">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Meteorological"/>
+        <rdfs:label xml:lang="en">Extreme Temperatures</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Famine -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Famine">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Fire -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Fire">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/MiscellaneousAccident"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/FlashFlood -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/FlashFlood">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Flood"/>
+        <rdfs:label xml:lang="en">Flash Flood</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Flood -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Flood">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Hydrological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/FluvialAccident -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/FluvialAccident">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/AccidentOnWater"/>
+        <rdfs:label xml:lang="en">Fluvial Accident</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Fog -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Fog">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Meteorological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Food -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Food">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/FoodAndWater"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/FoodAndWater -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/FoodAndWater">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SocialDisaster"/>
+        <rdfs:label xml:lang="en">Food And Water</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ForestFire -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ForestFire">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Wildfire"/>
+        <rdfs:label xml:lang="en">Forest Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Frost-Freeze -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Frost-Freeze">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SevereWinterConditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/FungalDisease -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/FungalDisease">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Epidemic"/>
+        <rdfs:label xml:lang="en">Fungal Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/GasLeak -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/GasLeak">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialAccident"/>
+        <rdfs:label xml:lang="en">Gas Leak</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/GeomagneticStorm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/GeomagneticStorm">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SpaceWeather"/>
+        <rdfs:label xml:lang="en">Geomagnetic Storm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Geophysical -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Geophysical">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/NaturalDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/GlacialLakeOutburst -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/GlacialLakeOutburst">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Climatological"/>
+        <rdfs:label xml:lang="en">Glacial Lake Outburst</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/GradualFlood -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/GradualFlood">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Flood"/>
+        <rdfs:label xml:lang="en">Gradual Flood</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Grasshopper -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Grasshopper">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InsectInfestation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/GroundShaking -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/GroundShaking">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Earthquake"/>
+        <rdfs:label xml:lang="en">Ground Shaking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Hail -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Hail">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/HeatWave -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/HeatWave">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ExtremeTemperatures"/>
+        <rdfs:label xml:lang="en">Heat Wave</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/HeavyRain -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/HeavyRain">
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Rain"/>
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+        <rdfs:label xml:lang="en">Heavy Rain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Hurricane -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Hurricane">
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/TropicalStorm"/>
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Typhoon"/>
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Storm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Hydrological -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Hydrological">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/NaturalDisaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/IceJamFlood -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/IceJamFlood">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Flood"/>
+        <rdfs:label xml:lang="en">Ice Jam Flood</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Impact -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Impact">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Extraterrestrial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/IndustrialAccident -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/IndustrialAccident">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/TechnologicalDisaster"/>
+        <rdfs:label xml:lang="en">Industrial Accident</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/IndustrialCollapse -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/IndustrialCollapse">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialAccident"/>
+        <rdfs:label xml:lang="en">Collapse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/IndustrialExplosion -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/IndustrialExplosion">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialAccident"/>
+        <rdfs:comment xml:lang="en">Explosion involving industrial buildings or structures</rdfs:comment>
+        <rdfs:label xml:lang="en">Explosion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/IndustrialFire -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/IndustrialFire">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialAccident"/>
+        <rdfs:label xml:lang="en">Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/InsectInfestation -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/InsectInfestation">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Biological"/>
+        <rdfs:label xml:lang="en">Insect Infestation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/InterfaceFire -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/InterfaceFire">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Wildfire"/>
+        <rdfs:label xml:lang="en">Interface Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Intoxication -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Intoxication">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Lahar -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Lahar">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/VolcanicActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/LandErosion -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LandErosion">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Erosion"/>
+        <rdfs:label xml:lang="en">Land Erosion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/LandFire -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LandFire">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Wildfire"/>
+        <rdfs:label xml:lang="en">Land Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/LandSlide -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LandSlide">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/MassMovement"/>
+        <rdfs:label xml:lang="en">Land Slide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Landslide -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Landslide">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Hydrological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/LawaFlow -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LawaFlow">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/VolcanicActivity"/>
+        <rdfs:label xml:lang="en">Lawa Flow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Leaking -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Leaking">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Erosion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/LightningStorm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LightningStorm">
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Thunderstorm"/>
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+        <rdfs:label xml:lang="en">Lightning Storm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Liquefaction -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Liquefaction">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Erosion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Locust -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Locust">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/InsectInfestation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/MassMovement -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/MassMovement">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Geophysical"/>
+        <rdfs:label xml:lang="en">Mass Movement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/MassPanic -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/MassPanic">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Conflict"/>
+        <rdfs:label xml:lang="en">Mass Panic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Meteorological -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Meteorological">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/NaturalDisaster"/>
+        <rdfs:comment xml:lang="en">Disaster Subgroup: Meteorological Disaster</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/MiningAccident -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/MiningAccident">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialCollapse"/>
+        <rdfs:comment xml:lang="en">Accident in a mine</rdfs:comment>
+        <rdfs:label xml:lang="en">Mining Accident</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/MiscellaneousAccident -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/MiscellaneousAccident">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/TechnologicalDisaster"/>
+        <rdfs:label xml:lang="en">Miscellaneous Accident</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Mudslide -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Mudslide">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Landslide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/NaturalDisaster -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/NaturalDisaster">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Disaster"/>
+        <rdfs:comment xml:lang="en">Disaster Group: Natural Disaster</rdfs:comment>
+        <rdfs:label xml:lang="en">Natural Disaster</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Other -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Other">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialAccident"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ParasiticDisease -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ParasiticDisease">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Epidemic"/>
+        <rdfs:label xml:lang="en">Parasitic Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Poisoning -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Poisoning">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialAccident"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Pollution -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Pollution">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Contamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/PrionDisease -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/PrionDisease">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Epidemic"/>
+        <rdfs:label xml:lang="en">Prion Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/PyroclasticFlow -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/PyroclasticFlow">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/VolcanicActivity"/>
+        <rdfs:label xml:lang="en">Pyroclastic Flow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Radiation -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Radiation">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialAccident"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/RadioDisturbance -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/RadioDisturbance">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SpaceWeather"/>
+        <rdfs:label xml:lang="en">Radio Disturbance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Rain -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Rain">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Rationing -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Rationing">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Riots -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Riots">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Conflict"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/RiverineFlood -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/RiverineFlood">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Flood"/>
+        <rdfs:label xml:lang="en">Riverine Flood</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/RogueWave -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/RogueWave">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/WaveAction"/>
+        <rdfs:label xml:lang="en">Rogue Wave</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Sandstorm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Sandstorm">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Sedimentation -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Sedimentation">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Hydrological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Seiche -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Seiche">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/WaveAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/SevereWinterConditions -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/SevereWinterConditions">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ExtremeTemperatures"/>
+        <rdfs:label xml:lang="en">Severe Winter Conditions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Shipwreck -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Shipwreck">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/AccidentOnWater"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Shockwave -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Shockwave">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SpaceWeather"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Sinkhole -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Sinkhole">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/MassMovement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Snow-Ice -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Snow-Ice">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/SevereWinterConditions"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/SnowAvalanche -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/SnowAvalanche">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Avalanche"/>
+        <rdfs:label xml:lang="en">Snow Avalanche</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Snow_Storm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Snow_Storm">
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Winterstorm"/>
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/SocialDisaster -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/SocialDisaster">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Disaster"/>
+        <rdfs:label xml:lang="en">Social Disaster</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/SocialDisruption -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/SocialDisruption">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Conflict"/>
+        <rdfs:label xml:lang="en">Social Disruption</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/SpaceWeather -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/SpaceWeather">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Extraterrestrial"/>
+        <rdfs:label xml:lang="en">Space Weather</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Storm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Storm">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Meteorological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/StormSurge -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/StormSurge">
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Surge"/>
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+        <rdfs:label xml:lang="en">Storm Surge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/StrongWind -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/StrongWind">
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Wind"/>
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+        <rdfs:label xml:lang="en">Strong Wind</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/StructureCollapse -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/StructureCollapse">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/IndustrialCollapse"/>
+        <rdfs:label xml:lang="en">Structure Collapse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Surge -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Surge">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TechnologicalDisaster -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/TechnologicalDisaster">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Disaster"/>
+        <rdfs:label xml:lang="en">Technological Disaster</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TerroristActions -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/TerroristActions">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Conflict"/>
+        <rdfs:label xml:lang="en">Terrorist Actions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Thunderstorm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Thunderstorm">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TideAbrasion -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/TideAbrasion">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Erosion"/>
+        <rdfs:label xml:lang="en">Tide Abrasion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Tornado -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Tornado">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TransportAccident -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/TransportAccident">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/TechnologicalDisaster"/>
+        <rdfs:label xml:lang="en">Transport Accident</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/TropicalStorm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/TropicalStorm">
+        <owl:equivalentClass rdf:resource="http://www.tut.fi/mat/disasterOnt/Typhoon"/>
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Storm"/>
+        <rdfs:label xml:lang="en">Tropical Storm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Tsunami -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Tsunami">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Earthquake"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Typhoon -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Typhoon">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Storm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/UrbanFire -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/UrbanFire">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Fire"/>
+        <rdfs:comment xml:lang="en">Wildfire in urban area</rdfs:comment>
+        <rdfs:label xml:lang="en">Urban Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/ViralDisease -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ViralDisease">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Epidemic"/>
+        <rdfs:label xml:lang="en">Viral Disease</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/VolcanicActivity -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/VolcanicActivity">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Geophysical"/>
+        <rdfs:label xml:lang="en">Volcanic Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/War -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/War">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Conflict"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/WaterContamination -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/WaterContamination">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Contamination"/>
+        <rdfs:label xml:lang="en">Water Contamination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/WaterDeficit -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/WaterDeficit">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/FoodAndWater"/>
+        <rdfs:comment xml:lang="en">Water shortage</rdfs:comment>
+        <rdfs:label xml:lang="en">Water Deficit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/WaveAction -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/WaveAction">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Hydrological"/>
+        <rdfs:label xml:lang="en">Wave Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Wildfire -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Wildfire">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/Climatological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Wind -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Wind">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Winterstorm -->
+
+    <owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Winterstorm">
+        <rdfs:subClassOf rdf:resource="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm"/>
+        <rdfs:label xml:lang="en">Winter Storm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Blizzard -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Blizzard">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Blizzard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Cold_Wave -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Cold_Wave">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/ColdWave"/>
+        <rdfs:label xml:lang="en">Cold Wave</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Derecho -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Derecho">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Derecho"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Dust_Storm -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Dust_Storm">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Duststorm"/>
+        <rdfs:label xml:lang="en">Dust Storm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Extra-Tropical_Storm -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Extra-Tropical_Storm">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/ExtraTropicalStorm"/>
+        <rdfs:label xml:lang="en">Extra-Tropical Storm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Fog -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Fog">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Fog"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Frost-Freeze -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Frost-Freeze">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Frost-Freeze"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Hail -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Hail">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Hail"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Heat_Wave -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Heat_Wave">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/HeatWave"/>
+        <rdfs:label xml:lang="en">Heat Wave</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Heavy_Rain -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Heavy_Rain">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/HeavyRain"/>
+        <rdfs:label xml:lang="en">Heavy Rain</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Hurricane -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Hurricane">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Hurricane"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Lightning_Storm -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Lightning_Storm">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/LightningStorm"/>
+        <rdfs:label xml:lang="en">Lightning Storm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/OWLNamedIndividual_00000000000000000000 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/OWLNamedIndividual_00000000000000000000">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <do:TypeOfDisaster rdf:resource="http://www.tut.fi/mat/disasterOnt/Tornado"/>
+        <do:ADL1Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYRV</do:ADL1Code>
+        <do:ADL1Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rivera</do:ADL1Name>
+        <do:ADL2Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYRV08</do:ADL2Code>
+        <do:ADL2Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">08</do:ADL2Name>
+        <do:Cause rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No asignada</do:Cause>
+        <do:CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UY</do:CountryISOalpha2>
+        <do:CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uruguay</do:CountryName>
+        <do:InfrastructureAffected rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Destrucción de varias casas</do:InfrastructureAffected>
+        <do:Latitude rdf:datatype="http://www.w3.org/2003/01/geo/wgs84_pos#lat">-31.781274</do:Latitude>
+        <do:Longitude rdf:datatype="http://www.w3.org/2003/01/geo/wgs84_pos#long">-54.693748</do:Longitude>
+        <do:NumberOfDeaths rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</do:NumberOfDeaths>
+        <do:NumberOfInjured rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">12</do:NumberOfInjured>
+        <do:SourceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worldlingocom  http://wwwworldlingocom/ma/enwiki/es/List_of_Southern_Hemisphere_tornadoes_and_tornado_outbreaks#South_America  WEB</do:SourceName>
+        <do:StartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1968-10-25T00:00:00.000Z</do:StartDate>
+        <do:disasterCode rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">1968-00001</do:disasterCode>
+        <rdfs:label>uytornado00</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/OWLNamedIndividual_00000000000000000001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/OWLNamedIndividual_00000000000000000001">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <do:TypeOfDisaster rdf:resource="http://www.tut.fi/mat/disasterOnt/Thunderstorm"/>
+        <do:ADL1Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYCA</do:ADL1Code>
+        <do:ADL1Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Canelones</do:ADL1Name>
+        <do:ADL2Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYCA04</do:ADL2Code>
+        <do:ADL2Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">04</do:ADL2Name>
+        <do:Cause rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No Asignada</do:Cause>
+        <do:Comments rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 muerte provocada por descarga de un rayo</do:Comments>
+        <do:CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UY</do:CountryISOalpha2>
+        <do:CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uruguay</do:CountryName>
+        <do:Latitude rdf:datatype="http://www.w3.org/2003/01/geo/wgs84_pos#lat">-34.729729</do:Latitude>
+        <do:Location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hipódromo de Las Piedras</do:Location>
+        <do:Longitude rdf:datatype="http://www.w3.org/2003/01/geo/wgs84_pos#long">-56.200124</do:Longitude>
+        <do:NumberOfDeaths rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</do:NumberOfDeaths>
+        <do:SourceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El Pais  http://wwwelpaiscomuy/06/03/17/ultmo_206882asp  WEB</do:SourceName>
+        <do:StartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2006-03-16T00:00:00.000Z</do:StartDate>
+        <do:disasterCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2006-00004</do:disasterCode>
+        <rdfs:label>uythunder01</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/OWLNamedIndividual_00000000000000000002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/OWLNamedIndividual_00000000000000000002">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <do:TypeOfDisaster rdf:resource="http://www.tut.fi/mat/disasterOnt/Wind"/>
+        <do:ADL1Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYAR</do:ADL1Code>
+        <do:ADL1Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artigas</do:ADL1Name>
+        <do:ADL2Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYAR06</do:ADL2Code>
+        <do:ADL2Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06</do:ADL2Name>
+        <do:CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UY</do:CountryISOalpha2>
+        <do:CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uruguay</do:CountryName>
+        <do:Location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pueblo Segueira</do:Location>
+        <do:StartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-04-18T00:00:00.000Z</do:StartDate>
+        <do:disasterCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008-00002</do:disasterCode>
+        <rdfs:label>uywind02</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Rain -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Rain">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Rain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Sandstorm -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Sandstorm">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Sandstorm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Snow-Ice -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Snow-Ice">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Snow-Ice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Snow_Storm -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Snow_Storm">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Snow_Storm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Storm_Surge -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Storm_Surge">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/StormSurge"/>
+        <rdfs:label xml:lang="en">Storm Surge</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Strong_Wind -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Strong_Wind">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/StrongWind"/>
+        <rdfs:label xml:lang="en">Strong Wind</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Surge -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Surge">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Surge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Thunderstorm -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Thunderstorm">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Thunderstorm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Tornado -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Tornado">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Tornado"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Tropical_Storm -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Tropical_Storm">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/TropicalStorm"/>
+        <rdfs:label xml:lang="en">Tropical Storm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Typhoon -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Typhoon">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Typhoon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Wind -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Wind">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Wind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/Winter_Storm -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/Winter_Storm">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/Winterstorm"/>
+        <rdfs:label xml:lang="en">Winter Storm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/crwind -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/crwind">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <do:TypeOfDisaster rdf:resource="http://www.tut.fi/mat/disasterOnt/Wind"/>
+        <do:ADL1Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">01</do:ADL1Code>
+        <do:ADL1Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">San Jose</do:ADL1Name>
+        <do:ADL2Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0110</do:ADL2Code>
+        <do:ADL2Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alajuelita</do:ADL2Name>
+        <do:ADL3Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">011004</do:ADL3Code>
+        <do:ADL3Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concepcion</do:ADL3Name>
+        <do:Cause rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Other</do:Cause>
+        <do:CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CR</do:CountryISOalpha2>
+        <do:CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Costa Rica</do:CountryName>
+        <do:HousesAffected rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">170</do:HousesAffected>
+        <do:HousesDestroyed rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">19</do:HousesDestroyed>
+        <do:Location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tejarcillos</do:Location>
+        <do:NumberOfEvacuated rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">100</do:NumberOfEvacuated>
+        <do:SourceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El Heraldo, El Guardian</do:SourceName>
+        <do:StartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1999-07-11T00:00:00.000Z</do:StartDate>
+        <do:TotalAffected rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">100</do:TotalAffected>
+        <do:disasterCode>1999-000015</do:disasterCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/disCR6surge -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/disCR6surge">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <do:TypeOfDisaster rdf:resource="http://www.tut.fi/mat/disasterOnt/Surge"/>
+        <do:ADL1Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">06</do:ADL1Code>
+        <do:ADL1Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Puntarenas</do:ADL1Name>
+        <do:ADL2Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0601</do:ADL2Code>
+        <do:ADL2Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Puntarenas</do:ADL2Name>
+        <do:ADL3Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">060101</do:ADL3Code>
+        <do:ADL3Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Puntarenas</do:ADL3Name>
+        <do:Cause rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Other</do:Cause>
+        <do:Comments rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El transporte fue interrumpido debido a los desechos lanzados por la marejada sobre la carretera.</do:Comments>
+        <do:CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CR</do:CountryISOalpha2>
+        <do:CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Costa Rica</do:CountryName>
+        <do:Location rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La Angostura</do:Location>
+        <do:NumberOfEvacuated rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</do:NumberOfEvacuated>
+        <do:NumberOfInjured rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">9</do:NumberOfInjured>
+        <do:SourceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La Nacion</do:SourceName>
+        <do:StartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2002-05-29T00:00:00.000Z</do:StartDate>
+        <do:disasterCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2002-89</do:disasterCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/disaster5cr -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/disaster5cr">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <do:TypeOfDisaster rdf:resource="http://www.tut.fi/mat/disasterOnt/Tropical_Storm"/>
+        <do:ADL1Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">07</do:ADL1Code>
+        <do:ADL1Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Limon</do:ADL1Name>
+        <do:ADL2Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0701</do:ADL2Code>
+        <do:ADL2Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Limon</do:ADL2Name>
+        <do:ADL3Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">070104</do:ADL3Code>
+        <do:ADL3Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estrella</do:ADL3Name>
+        <do:CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CR</do:CountryISOalpha2>
+        <do:CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Costa Rica</do:CountryName>
+        <do:NumberOfDeaths rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">113</do:NumberOfDeaths>
+        <do:NumberOfMissing rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">67</do:NumberOfMissing>
+        <do:StartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-01-30T00:00:00.000Z</do:StartDate>
+        <do:TotalEstimatedDamagesLocal rdf:datatype="http://www.w3.org/2001/XMLSchema#double">500000.0</do:TotalEstimatedDamagesLocal>
+        <do:disasterCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008-11</do:disasterCode>
+        <rdfs:label>crtropstrm</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tut.fi/mat/disasterOnt/event2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tut.fi/mat/disasterOnt/event2">
+        <rdf:type rdf:resource="http://www.tut.fi/mat/disasterOnt/DisasterEvent"/>
+        <do:TypeOfDisaster rdf:resource="http://www.tut.fi/mat/disasterOnt/Hail"/>
+        <do:ADL1Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYFD</do:ADL1Code>
+        <do:ADL1Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Florida</do:ADL1Name>
+        <do:ADL2Code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UYFD02</do:ADL2Code>
+        <do:ADL2Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">02</do:ADL2Name>
+        <do:Cause rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No Asignada</do:Cause>
+        <do:Comments rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ceeayuí - Nusa  http://wwwceeayuiorguy/web2010/indexphp/actividades2007/56-fenomenosseveros  WEB</do:Comments>
+        <do:CountryISOalpha2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UY</do:CountryISOalpha2>
+        <do:CountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uruguay</do:CountryName>
+        <do:HousesAffected rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">200</do:HousesAffected>
+        <do:Latitude rdf:datatype="http://www.w3.org/2003/01/geo/wgs84_pos#lat">-34.196575</do:Latitude>
+        <do:Longitude rdf:datatype="http://www.w3.org/2003/01/geo/wgs84_pos#long">-55.7358</do:Longitude>
+        <do:NumberOfDeaths rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</do:NumberOfDeaths>
+        <do:StartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1991-10-14T00:00:00.000Z</do:StartDate>
+        <do:disasterCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1991-00002</do:disasterCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Blizzard">
+        <rdfs:label xml:lang="en">Blizzard</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Derecho">
+        <rdfs:label xml:lang="en">Derecho</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Fog">
+        <rdfs:label xml:lang="en">Fog</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Frost-Freeze">
+        <rdfs:label xml:lang="en">Frost/Freeze</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Hail">
+        <rdfs:label xml:lang="en">Hail</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Rain">
+        <rdfs:label xml:lang="en">Rain</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Sandstorm">
+        <rdfs:label xml:lang="en">Sandstorm</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Snow-Ice">
+        <rdfs:label xml:lang="en">Snow/Ice</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Snow_Storm">
+        <rdfs:label xml:lang="en">Snow Storm</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Surge">
+        <rdfs:label xml:lang="en">Surge</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Thunderstorm">
+        <rdfs:label xml:lang="en">Thunderstorm</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Tornado">
+        <rdfs:label xml:lang="en">Tornado</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/Wind">
+        <rdfs:label xml:lang="en">Wind</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+
