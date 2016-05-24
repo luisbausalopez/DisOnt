@@ -1,0 +1,599 @@
+<rdf:RDF xmlns="http://www.tut.fi/mat/disasterOnt/Index/"
+     xml:base="http://www.tut.fi/mat/disasterOnt/Index/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+     
+    <owl:Ontology rdf:about="http://www.tut.fi/mat/disasterOnt/Mapping/">
+		<rdfs:comment>
+			This file contains the mappings for the Desinventar datasets.
+			
+			Each record in the desinventar datasets contains a Event property of type string that can be mapped to a Disaster type.
+			The mappings are done for each country, as the content and meaning of the string differs across countries.
+			
+			Example of the mappings:
+			 * do_UY:Event "TORNADO"       = do:Tornado
+			 * do_UY:Event "STRONGWIND"    = do:Wind
+			 * do_UY:Event "STORM"         = do:ConvectiveStorm
+			 * do_UY:Event "ELECTRICSTORM" = do:LightningStorm
+			 * do_AL:Event "STRONGWIND"    = do:Wind
+			 * do_AL:Event "STORM"         = do:ExtraTropicalStorm
+			 * do_AL:Event "THUNDERSTORM"  = do:LightningStorm
+
+			ON 2016-05-20 by Luis Bausa Lopez [luis.bausa@uji.es]
+		</rdfs:comment>
+   </owl:Ontology>
+
+
+<!-- Mapping of Classes for the Desinventar Datasets of each country -->     
+
+	<!-- AL - Albania -->
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Frost-Freeze">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/AL/Event"/>
+		   <owl:hasValue>FROST</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+		 
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ExtraTropicalStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/AL/Event"/>
+		   <owl:hasValue>STORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Blizzard">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/AL/Event"/>
+		   <owl:hasValue>SNOWSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Hail">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/AL/Event"/>
+		   <owl:hasValue>HAILSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LightningStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/AL/Event"/>
+		   <owl:hasValue>THUNDERSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Rain">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/AL/Event"/>
+		   <owl:hasValue>RAINS</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Surge">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/AL/Event"/>
+		   <owl:hasValue>SURGE</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Wind">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/AL/Event"/>
+		   <owl:hasValue>WINDSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+
+	<!-- BO - Bolivia -->
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Frost-Freeze">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/BO/Event"/>
+		   <owl:hasValue>FROST</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+		 
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/BO/Event"/>
+		   <owl:hasValue>STORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Blizzard">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/BO/Event"/>
+		   <owl:hasValue>SNOWSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Hail">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/BO/Event"/>
+		   <owl:hasValue>HAILSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LightningStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/BO/Event"/>
+		   <owl:hasValue>ELECTRICSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Rain">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/BO/Event"/>
+		   <owl:hasValue>RAIN</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Tornado">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/BO/Event"/>
+		   <owl:hasValue>TORNADO</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Wind">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/BO/Event"/>
+		   <owl:hasValue>STRONGWIND</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+
+	<!-- CL - Chile -->
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Frost-Freeze">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CL/Event"/>
+		   <owl:hasValue>FROST</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+		 
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Rain">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CL/Event"/>
+		   <owl:hasValue>STORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Blizzard">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CL/Event"/>
+		   <owl:hasValue>SNOWSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Hail">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CL/Event"/>
+		   <owl:hasValue>HAILSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LightningStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CL/Event"/>
+		   <owl:hasValue>ELECTRICSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Rain">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CL/Event"/>
+		   <owl:hasValue>RAIN</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Surge">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CL/Event"/>
+		   <owl:hasValue>SURGE</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Wind">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CL/Event"/>
+		   <owl:hasValue>STRONGWIND</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+
+	<!-- CO - Colombia -->
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Frost-Freeze">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CO/Event"/>
+		   <owl:hasValue>FROST</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+		 
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Storm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CO/Event"/>
+		   <owl:hasValue>STORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+		 
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/TropicalStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CO/Event"/>
+		   <owl:hasValue>HURRICANE</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Blizzard">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CO/Event"/>
+		   <owl:hasValue>SNOWSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Hail">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CO/Event"/>
+		   <owl:hasValue>HAILSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LightningStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CO/Event"/>
+		   <owl:hasValue>ELECTRICSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Rain">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CO/Event"/>
+		   <owl:hasValue>RAIN</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+		 
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Surge">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CO/Event"/>
+		   <owl:hasValue>SURGE</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Wind">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CO/Event"/>
+		   <owl:hasValue>STRONGWIND</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+
+	<!-- CR - Costa Rica -->
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CR/Event"/>
+		   <owl:hasValue>STORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Hail">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CR/Event"/>
+		   <owl:hasValue>HAILSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LightningStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CR/Event"/>
+		   <owl:hasValue>ELECTRICSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Rain">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CR/Event"/>
+		   <owl:hasValue>RAIN</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Surge">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CR/Event"/>
+		   <owl:hasValue>SURGE</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Wind">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/CR/Event"/>
+		   <owl:hasValue>STRONGWIND</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+
+	<!-- EC - Ecuador -->     
+
+
+
+	<!-- SV - El Salvador -->     
+
+
+
+	<!-- GT - Guatemala -->
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Frost-Freeze">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/GT/Event"/>
+		   <owl:hasValue>FROST</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/TropicalStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/GT/Event"/>
+		   <owl:hasValue>HURRICANE</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+		 
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/GT/Event"/>
+		   <owl:hasValue>STORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Hail">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/GT/Event"/>
+		   <owl:hasValue>HAILSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LightningStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/GT/Event"/>
+		   <owl:hasValue>ELECTRICSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Rain">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/GT/Event"/>
+		   <owl:hasValue>RAIN</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Surge">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/GT/Event"/>
+		   <owl:hasValue>SURGE</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+	 
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Tornado">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/GT/Event"/>
+		   <owl:hasValue>TORNADO</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Wind">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/GT/Event"/>
+		   <owl:hasValue>STRONGWIND</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	 
+	<!-- GY - Guyana -->     
+
+
+	<!-- HN - Honduras -->     
+
+
+	<!-- ID - Indonesia -->     
+
+
+	<!-- JM - Jamaica -->     
+
+
+	<!-- MX - Mexico -->     
+
+
+	<!-- NP - Nepal -->     
+
+
+	<!-- NI - Nicaragua -->     
+
+
+	<!-- PA - Panama -->     
+
+
+	<!-- PE - Peru -->     
+
+
+	<!-- RS - Serbia -->      
+
+
+	<!-- UY - Uruguay -->
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Frost-Freeze">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/UY/Event"/>
+		   <owl:hasValue>FROST</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+		 
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/ConvectiveStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/UY/Event"/>
+		   <owl:hasValue>STORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+			  
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Hail">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/UY/Event"/>
+		   <owl:hasValue>HAILSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/LightningStorm">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/UY/Event"/>
+		   <owl:hasValue>ELECTRICSTORM</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+	 
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Tornado">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/UY/Event"/>
+		   <owl:hasValue>TORNADO</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://www.tut.fi/mat/disasterOnt/Wind">
+	   <owl:equivalentClass>
+		 <owl:Restriction>
+		   <owl:onProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/UY/Event"/>
+		   <owl:hasValue>STRONGWIND</owl:hasValue>
+		 </owl:Restriction>
+	   </owl:equivalentClass>
+	</owl:Class>
+	 
+
+	<!-- VE - Venezuela -->     
+
+
+
+
+
+
+<!-- Properties -->
+	<!--
+	<rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/nOfDeaths">
+	  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	<rdf:Description rdf:about="http://www.tut.fi/mat/disasterOnt/date">
+	  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Description>
+	-->
+
+	<!--
+	<owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/nOfDeaths">
+	   <owl:equivalentProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Uruguay/Deaths"/>
+	 </owl:DatatypeProperty>        
+
+	<owl:DatatypeProperty rdf:about="http://www.tut.fi/mat/disasterOnt/date">
+	   <owl:equivalentProperty rdf:resource="http://www.tut.fi/mat/disasterOnt/Uruguay/DateYMD"/>
+	 </owl:DatatypeProperty> 
+	-->       
+
+</rdf:RDF>
+
+
+
